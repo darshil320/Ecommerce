@@ -1,0 +1,94 @@
+
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-shadow:border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+h2{
+  margin-bottom:3rem;
+}
+
+.Rcard{
+    flex: none;
+  width:30vmax;
+    margin: 2rem;
+  margin-bottom:.7rem;
+  border-radius:5px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.Rcard > *{
+  padding:1rem 1.2rem;
+  
+}
+.Rcard-top{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.img{
+  width:50px;
+  height:50px;
+  background:rgb(205, 205, 254);
+  border-radius:50%;
+  outline:none;
+}
+.name .one{
+  background:orange;
+}
+.name,.name .img{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.name .img{
+  justify-content:center;
+}
+.rate i{
+  color:yellow;
+}
+.Rcard-content{
+  margin:0;
+  padding-top:0;
+}
+.Rcard-content p{
+  font-size:.8rem;
+  color:rgb(152, 152, 165);
+}
+.Rcard-action{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.Rcard-action span{
+  font-size:.8rem;
+  color:RGB(101, 101, 114);
+}
+.Rcard-action .btn{
+  padding: .3rem .7rem;
+  background:transparent;
+  border: 1px solid #000;
+  border-radius:2px;
+  color:#8C8C9F;
+  cursor:pointer;
+  transition:.2s ease-in-out;
+}
+.btn:hover{
+  background:#000;
+  color:#fff;
+}
+
+@media screen and (max-width:750px){
+  body{
+    padding:0rem;
+    margin:0;
+  }
+
+}

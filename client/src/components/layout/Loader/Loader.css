@@ -1,0 +1,67 @@
+/* Loader.css */
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loader-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #A99DFD,
+    #ffffff
+  );
+  z-index: -1;
+  animation: backgroundAnimation 5s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  background-color: #A99DFD;
+  border-radius: 50%;
+  position: relative;
+  animation: spinLoader 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.loader2 {
+  background-color: #f3fd9d;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spinLoader 1s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes spinLoader {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
