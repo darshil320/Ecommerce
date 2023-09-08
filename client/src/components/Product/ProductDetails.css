@@ -8,7 +8,6 @@
 
 .ProductDetails > div {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-items: space-evenly;
@@ -182,8 +181,7 @@
   display: flex;
   overflow: auto;
   align-items: center;
-  margin: 1vmax;
-  padding: 3vmax;
+    padding: 6vmax;
   scroll-behavior: smooth;
 }
 

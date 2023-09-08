@@ -7,6 +7,7 @@ import "./ProductDetails.css";
 import { Rating } from "@mui/material";
 import ReviewCard from "./ReviewCard";
 import {useAlert} from "react-alert";
+import Loader from "../layout/Loader/Loader";
 
 function ProductDetails({}) {
   const alert = useAlert();
@@ -29,7 +30,7 @@ function ProductDetails({}) {
   return (
     <Fragment>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader/>
       ) : (
         <Fragment>
           <div className="ProductDetails">
