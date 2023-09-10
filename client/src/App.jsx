@@ -7,8 +7,8 @@ import Footer from './components/layout/Footer/Footer.jsx';
 import Home from './components/Home/Home.jsx';
 import ProductDetails from './components/Product/ProductDetails.jsx';
 import Products from './components/Product/Products.jsx';
-
-
+import Search from './components/Product/Search';
+import Authentication from './components/User/Authentication';
 
 
 
@@ -34,6 +34,18 @@ function App() {
         <Route
           path="/products"
           element={<Products/>}
+        />
+        <Route
+          path="/products/:keyword"
+          element={<Products/>}
+        />
+        <Route
+          path="/search"
+          element={<Search/>}
+        />
+        <Route
+          path="/login"
+          element={<Authentication/>}
         />
       </Routes>
       <Footer />

@@ -26,7 +26,7 @@ const Footer = () => {
             </div>
 
             <h5>
-              Working <span id="star">✲</span> worldwide.
+              Shipping <span id="star">✲</span> worldwide.
             </h5>
             <h5> Based in Surat.</h5>
           </div>

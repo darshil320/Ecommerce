@@ -33,26 +33,38 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
 
 //GET ALL PRODUCTS admin
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
-
   const resultPerPage = 8;
   const productsCount = await Product.countDocuments();
 
-  const apiFeature= new ApiFeatures(Product.find(), req.query).search().filter().pagination(resultPerPage);
+  const apiFeature = new ApiFeatures(Product.find(), req.query)
+    .search()
+    .filter();
+
+  // Count the filtered products
+  const filteredProductsCount = await Product.countDocuments(
+    apiFeature.query.getFilter()
+  );
+
+  // Apply pagination and fetch the paginated results
+  apiFeature.pagination(resultPerPage);
   const products = await apiFeature.query;
 
   res.status(200).json({
     success: true,
     products,
     productsCount,
+    resultPerPage,
+    filteredProductsCount,
   });
 });
+
 
 //update product admin
 
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   let product = Product.findById(req.params.id);
   if (!product) {
-    return next(new ErrorHandler("product not found", 204));
+    return next(new ErrorHander("product not found", 204));
   }
 
   product = await Product.findByIdAndUpdate(req.params.id, req.body, {
@@ -77,7 +89,7 @@ exports.deleteProduct = catchAsyncErrors(
 
         if (!product) {
           return next(
-            new ErrorHandler("cant delete product cause its not found", 404)
+            new ErrorHander("cant delete product cause its not found", 404)
           );
         }
         res.status(200).json({
@@ -86,13 +98,13 @@ exports.deleteProduct = catchAsyncErrors(
         });
 
     } catch (error) {
-        return next(new ErrorHandler(error.message, 404));
+        return next(new ErrorHander(error.message, 404));
     }
     const product = await Product.findByIdAndDelete(req.params.id);
     
 
     if (!product) {
-        return next(new ErrorHandler("cant delete product cause its not found", 404));
+        return next(new ErrorHander("cant delete product cause its not found", 404));
     }
     res.status(200).json({
         success: true,
@@ -106,7 +118,7 @@ exports.deleteProduct = catchAsyncErrors(
 exports.getProduct = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
   if (!product) {
-    return next(new ErrorHandler("product not found", 404));
+    return next(new ErrorHander("product not found", 404));
   }
   res.status(200).json({
     success: true,
@@ -162,7 +174,7 @@ exports.getProductsReviews = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.query.id);
 
   if (!product) {
-    return next(new ErrorHandler("product not found", 404));
+    return next(new ErrorHander("product not found", 404));
   }
 
   res.status(200).json({
@@ -177,7 +189,7 @@ exports.getProductsReviews = catchAsyncErrors(async (req, res, next) => {
 exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.query.productId);
   if(!product){
-    return next(new ErrorHandler("product not found",404));
+    return next(new ErrorHander("product not found",404));
   }
   const reviews = product.reviews.filter(rev => rev._id.toString() !== req.query.id.toString())
    let avg = 0;

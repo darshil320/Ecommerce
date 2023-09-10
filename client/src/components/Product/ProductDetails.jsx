@@ -8,8 +8,9 @@ import { Rating } from "@mui/material";
 import ReviewCard from "./ReviewCard";
 import {useAlert} from "react-alert";
 import Loader from "../layout/Loader/Loader";
+import MetaData from "../layout/MetaData";
 
-function ProductDetails({}) {
+function ProductDetails() {
   const alert = useAlert();
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -30,9 +31,10 @@ function ProductDetails({}) {
   return (
     <Fragment>
       {loading ? (
-        <Loader/>
+        <Loader />
       ) : (
         <Fragment>
+          <MetaData title={`${product.name} - DMC`}/>
           <div className="ProductDetails">
             <div className="carousel">
               <Carousel>

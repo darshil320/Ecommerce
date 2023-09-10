@@ -1,10 +1,17 @@
 const express = require('express');
 const app = express();
 const cors = require("cors");
-const errorMiddleware = require('./middleware/error');
-app.use(express.json());
 const cookieParser = require('cookie-parser');
+const bodyParser = require("body-parser");
+const fileUpload= require('express-fileupload');
+const errorMiddleware = require('./middleware/error');
+
+
+app.use(express.json());
 app.use(cookieParser())
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(fileUpload());
+
 const corsOptions = {
   origin: "http://localhost:3000", // Replace with the origin of your frontend
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",

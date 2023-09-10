@@ -165,8 +165,28 @@ color: #b0afb8;
     height: unset;
   }
   .leftFooter{
-    align-items: center;
+    width: 100%;
     
+  }
+  .midFooter{
+    width: 100%;
+    height: fit-content;
+  }
+  .midFooter > img {
+  height: 30vmax;
+  width: 100%;
+}
+.rightFooter{
+  width: 100%;
+
+}
+.container{
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+  .list-group {
+    flex: initial; 
   }
 
 }

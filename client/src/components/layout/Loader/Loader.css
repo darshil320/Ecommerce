@@ -8,6 +8,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  position: fixed;
 }
 
 .loader-background {
@@ -40,7 +41,7 @@
   background-color: #A99DFD;
   border-radius: 50%;
   position: relative;
-  animation: spinLoader 2s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation: spinLoader 1.5s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .loader2 {
   background-color: #f3fd9d;
@@ -59,7 +60,7 @@
     transform: rotate(0deg) scale(1);
   }
   50% {
-    transform: rotate(180deg) scale(1.2);
+    transform: rotate(220deg) scale(1.2);
   }
   100% {
     transform: rotate(360deg) scale(1);

@@ -35,6 +35,7 @@ const Header = () => {
       link2Url= "/products"
       link3Url= "/contact"
       link4Url= "/about"
+      profileIconUrl= "/login"
       nav4justifyContent="flex-start"
       searchIconMargin="0.5vmax"
       cartIconMargin="1vmax"

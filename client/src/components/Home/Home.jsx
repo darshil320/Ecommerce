@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import './Home.css';
-import { CgMouse } from "react-icons/cg";
-import MetaData from '../layout/Metadata';
+import { FaArrowDownLong } from "react-icons/fa6";
+import MetaData from '../layout/MetaData.js';
 import {useSelector, useDispatch} from 'react-redux';
 import  BackgroundVideo  from "../layout/bgVideo/BackgroundVideo";
 import { clearErrors, getProduct } from '../../actions/productAction';
@@ -17,7 +17,7 @@ const Home = () => {
 
 const alert = useAlert();  
 const dispatch = useDispatch();
-const {loading, products, error, productsCount} = useSelector((state) => state.products);
+const {loading, products, error} = useSelector((state) => state.products);
 
 useEffect(() => {
    if (error) {
@@ -34,18 +34,18 @@ useEffect(() => {
       ) : (
         <Fragment>
           <MetaData title="DMC" />
-           <BackgroundVideo>
+          <BackgroundVideo>
+            <div className="banner" id="hero">
+              <p className="gradient-text">welcome to The DMC</p>
+              <h1 className="gradient-text2">Find amazing products below</h1>
+              <a href="#container" className="scroll">
+                <button className="scroll-btn">
+                  scroll <FaArrowDownLong />
+                </button>
+              </a>
+            </div>
+          </BackgroundVideo>
 
-          <div className="banner" id="hero">
-            <p className="gradient-text">welcome to The DMC</p>
-            <h1 className="gradient-text2">Find amazing products below</h1>
-            <a href="#container" className="scroll">
-              <button>
-                scroll <CgMouse />
-              </button>
-            </a>
-          </div>
-           </BackgroundVideo>
           <h2 className="homeHeading">Featured Products</h2>
           <div className="container" id="container">
             {/* {products &&

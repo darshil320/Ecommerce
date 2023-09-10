@@ -31,12 +31,12 @@
 }
 .detailsBlock-1 > h2 {
   color: rgb(0, 0, 0);
-  font: 600 1.6vmax "Roboto";
+  font: 600 1.6vmax "Lato";
 }
 
 .detailsBlock-1 > p {
   color: rgba(0, 0, 0, 0.582);
-  font: 200 0.6vmax cursive;
+  font: 200 0.6vmax;
   margin: 1vmax 0;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .detailsBlock-2-span {
-  font: 200 0.8vmax cursive;
+  font: 200 0.8vmax ;
   color: rgba(0, 0, 0, 0.699);
 }
 
@@ -89,7 +89,7 @@
   width: 1vmax;
   text-align: center;
   outline: none;
-  font: 400 0.8vmax "Roboto";
+  font: 400 0.8vmax "Lato";
   color: rgba(0, 0, 0, 0.74);
 }
 .detailsBlock-3-1{
@@ -101,7 +101,7 @@
   color: white;
   transition: all 0.5s;
   background-color: black!important;
-  font: 500 .8vmax "Roboto";
+  font: 500 .8vmax "Lato";
   border-radius: 20px;
   padding: 0.5vmax 2vmax !important;
   margin: 1vmax;
@@ -118,7 +118,7 @@
 .detailsBlock-3-1 > p {
   padding: 1vmax 0;
   color: rgba(0, 0, 0, 0.651);
-  font: 400 1vmax "Roboto";
+  font: 400 1vmax "Lato";
   margin: 1vmax 0;
 }
 .redColor{
@@ -142,7 +142,7 @@
 .submitReview {
   border: none;
   background-color: black;
-  font: 500 0.8vmax "Roboto";
+  font: 500 0.8vmax "Lato";
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
   margin: 1vmax 0;
@@ -152,7 +152,7 @@
   outline: none;
 }
 .submitReview:hover {
-  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.861);
 }
 
 .submitDialog {
@@ -164,12 +164,12 @@
   margin: 1vmax 0;
   outline: none;
   padding: 1rem;
-  font: 300 1rem "Roboto";
+  font: 300 1rem "Lato";
 }
 
 .reviewsHeading {
   color: #000000be;
-  font: 500 1.4vmax "Roboto";
+  font: 500 1.4vmax "Lato";
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
   padding: 1vmax;
@@ -201,11 +201,11 @@
 }
 .reviewCard > p {
   color: rgba(0, 0, 0, 0.836);
-  font: 600 0.9vmax "Roboto";
+  font: 600 0.9vmax "Lato";
 }
 .reviewCardComment {
   color: rgba(0, 0, 0, 0.445);
-  font: 300 0.8vmax cursive;
+  font: 300 0.8vmax ;
 }
 
 .noReviews {
@@ -268,12 +268,12 @@
   .detailsBlock-3-1-1 > input {
     padding: 1.5vmax;
     width: 3vmax;
-    font: 400 1.8vmax "Roboto";
+    font: 400 1.8vmax "Lato";
   }
 
   .addtocart {
     flex-direction: column;
-    font: 500 1.7vmax "Roboto";
+    font: 500 1.7vmax "Lato";
     padding: 1.5vmax;
     width: 20vmax;
     margin: 3vmax 0;
@@ -282,7 +282,7 @@
   .detailsBlock-3 > p {
     padding: 2.5vmax 0;
     text-align: center;
-    font: 400 2vmax "Roboto";
+    font: 400 2vmax "Lato";
   }
 
   .detailsBlock-4 {
@@ -294,16 +294,16 @@
   }
 
   .submitReview {
-    font: 500 1.7vmax "Roboto";
+    font: 500 1.7vmax "Lato";
     padding: 1.5vmax;
     width: 20vmax;
     margin: 3vmax 0;
   }
 
   .reviewCard > p {
-    font: 600 3vw "Roboto";
+    font: 600 3vw "Lato";
   }
   .reviewCardComment {
-    font: 300 5vw cursive;
+    font: 300 5vw ;
   }
 }

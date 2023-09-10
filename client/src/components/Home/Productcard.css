@@ -39,9 +39,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
 }
 
 .card-logo {
-  width: 60px;
+  width: 30px;
   margin: 20px;
   scale: 2;
+  padding: 0.5rem 1rem;
 }
 
 .product-img {
@@ -53,8 +54,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
   transform: rotate(-30deg);
   margin-top: -16px;
   margin-left: 50px;
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 2;
 }
+
 .product-img:hover {
   height: 200px;
   width: auto;
@@ -241,7 +244,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
   border-radius: 7px;
   margin-top: -13px;
   margin-left: -5px;
-  box-shadow: -10px 20px 15px -10px rgba(17, 31, 233, 0.3);
 }
 
 .product-price b {

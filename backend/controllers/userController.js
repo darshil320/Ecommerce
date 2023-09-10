@@ -4,8 +4,16 @@ const User = require("../models/userModel");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
+const cloudinary = require("cloudinary");
+
 //register a user
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
+
+  const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar,{
+    folder:"avatars",
+    width:150,
+    crop:"scale" 
+  });
   const { name, email, password } = req.body;
   const userExist = await User.findOne({ email });
   if (userExist) {
@@ -16,8 +24,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     email,
     password,
     avatar: {
-      public_id: "this is sample id",
-      url: "this is sample url",
+      public_id: myCloud.public_id,
+      url: myCloud.secure_url,
     },
   });
   sendToken(user, 201, res);
@@ -28,8 +36,9 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     const {email,password} = req.body;
 
-    if(!email || !password){
-        return next(new ErrorHandler("Please Enter Email and Password",400))
+    if (!email || !password) {
+      console.log("Error: Missing email or password.");
+      return next(new ErrorHandler("Please Enter Email and Password", 400));
     }
 
     const user = await User.findOne({email}).select("+password");
@@ -55,7 +64,6 @@ exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
         success:true,
         message:"Logged Out"})
-
 })
 
 //Forgot password
