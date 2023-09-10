@@ -100,7 +100,6 @@
 .productCard > p:nth-of-type(2){
   color: #08072d;
 }
-
 .productCard > div >  span {
   margin: 0.5vmax;
   color: tomato;
@@ -137,7 +136,7 @@
 
 .gradient-text {
   position: relative;
-  font-size: 4em;
+  font-size: 3em !important;
   color: white;  /* Fallback color */
   
   /* Background for the regular state */
@@ -176,7 +175,7 @@
 
 .gradient-text2 {
   position: relative;
-  font-size: 4em;
+  font-size: 6.5rem!important;
   color: white;  /* Fallback color */
   
   /* Background for the regular state */

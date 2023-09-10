@@ -45,6 +45,7 @@ useEffect(() => {
               </a>
             </div>
           </BackgroundVideo>
+          <div className="homepage">
 
           <h2 className="homeHeading">Featured Products</h2>
           <div className="container" id="container">
@@ -53,6 +54,7 @@ useEffect(() => {
             {products &&
               products.map((product) => <Productcard product={product} />)}
           </div>
+              </div>
         </Fragment>
       )}
     </Fragment>
