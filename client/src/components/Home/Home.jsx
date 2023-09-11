@@ -34,10 +34,18 @@ useEffect(() => {
       ) : (
         <Fragment>
           <MetaData title="DMC" />
-          <BackgroundVideo>
+          <BackgroundVideo bgname="sit" topPosition="-9rem">
             <div className="banner" id="hero">
-              <p className="gradient-text">welcome to The DMC</p>
-              <h1 className="gradient-text2">Find amazing products below</h1>
+              <p className="gradient-text">
+                Discover luxury redefined
+                <br />
+                TheHouseOfDMC.
+              </p>
+              <h1 className="gradient-text2">
+                "Experience global Finesse Where global elegance Meets
+                <br />
+                timeless luxury, Crafted with distinction for every moment"
+              </h1>
               <a href="#container" className="scroll">
                 <button className="scroll-btn">
                   scroll <FaArrowDownLong />
@@ -46,15 +54,14 @@ useEffect(() => {
             </div>
           </BackgroundVideo>
           <div className="homepage">
-
-          <h2 className="homeHeading">Featured Products</h2>
-          <div className="container" id="container">
-            {/* {products &&
+            <h2 className="homeHeading">Featured Products</h2>
+            <div className="container" id="container">
+              {/* {products &&
               products.map((product) => <Product product={product} />)} */}
-            {products &&
-              products.map((product) => <Productcard product={product} />)}
+              {products &&
+                products.map((product) => <Productcard product={product} />)}
+            </div>
           </div>
-              </div>
         </Fragment>
       )}
     </Fragment>

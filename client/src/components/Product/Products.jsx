@@ -9,8 +9,9 @@ import Pagination from "react-js-pagination";
 import { Slider, Typography } from '@mui/material' 
 import {useAlert} from 'react-alert'
 import MetaData from '../layout/MetaData'
-import { grey, purple } from '@mui/material/colors'
-
+import BackgroundVideo from '../layout/bgVideo/BackgroundVideo'
+import { FaArrowDownLong } from 'react-icons/fa6'
+import { useRef } from "react";
 
 const categories = [
   "laptop",
@@ -25,6 +26,7 @@ const categories = [
 
 const Products = () => {  
   const alert = useAlert();
+  const productsSectionRef = useRef();
   const { keyword } = useParams();
   const dispatch = useDispatch();
   const {
@@ -40,21 +42,27 @@ const Products = () => {
   const [price, setPrice] = useState([0, 25000]);
   const [category, setCategory] = useState("");
   const [ratings, setRatings] = useState(0);
-
-  const priceHandler = (event, newPrice) => {
-    setPrice(newPrice);
-  }
-  
+  useEffect(() => {
+    if (productsSectionRef.current) {
+      productsSectionRef.current.scrollIntoView();
+    }
+  }, [products]);
 
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-    
+    if (productsSectionRef.current) {
+       window.scrollTo(0, productsSectionRef.current.offsetTop);
+     }
     dispatch(getProduct(keyword, currentPage, price, category,ratings));
   }, [dispatch, keyword, currentPage, price, category,ratings,error,alert]);
   
+   const priceHandler = (event, newPrice) => {
+     setPrice(newPrice);
+   };
+
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
 
@@ -67,100 +75,115 @@ const Products = () => {
       ) : (
         <Fragment>
           <MetaData title="Products - DMC" />
-          <h2 className="productsHeading">Products</h2>
+          <BackgroundVideo bgname="sitt" topPosition="0">
+            <div className="banner">
+              <p className="products-text">welcome to TheHouseOfDMC.</p>
+              <h1 className="products-text2">Find amazing products below</h1>
+              <a href="#products" className="scroll">
+                <button className="scroll-btn">
+                  scroll <FaArrowDownLong />
+                </button>
+              </a>
+            </div>
+          </BackgroundVideo>
+          <div className="ProductsPage" ref={productsSectionRef}>
+            <h2 className="productsHeading" id="products">
+              Products
+            </h2>
 
-          <div className="filterBox">
-            <div className="filter">
+            <div className="filterBox">
+              <div className="filter">
+                <Typography sx={{ color: "#A99DFD", p: 3, fontSize: "19px" }}>
+                  Price
+                </Typography>
+                <Slider
+                  value={price}
+                  onChange={priceHandler}
+                  valueLabelDisplay="auto"
+                  aria-labelledby="range-slider"
+                  min={0}
+                  max={25000}
+                  sx={{
+                    color: "#A99DFD",
+                    "& .MuiSlider-rail": {
+                      backgroundColor: "#A99DFD",
+                    },
+                    "& .MuiSlider-thumb": {
+                      backgroundColor: "#A99DFD",
+                    },
+                  }}
+                />
+              </div>
+
               <Typography sx={{ color: "#A99DFD", p: 3, fontSize: "19px" }}>
-                Price
+                Categories
               </Typography>
-              <Slider
-                value={price}
-                onChange={priceHandler}
-                valueLabelDisplay="auto"
-                aria-labelledby="range-slider"
-                min={0}
-                max={25000}
-                sx={{
-                  color: "#A99DFD",
-                  "& .MuiSlider-rail": {
-                    backgroundColor: "#A99DFD",
-                  },
-                  "& .MuiSlider-thumb": {
-                    backgroundColor: "#A99DFD",
-                  },
-                }}
-              />
-            </div>
+              <ul className="categoryBox">
+                {categories.map((category) => (
+                  <li
+                    className="category-link"
+                    key={category}
+                    onClick={() => setCategory(category)}
+                  >
+                    {category}
+                  </li>
+                ))}
+              </ul>
 
-            <Typography sx={{ color: "#A99DFD", p: 3, fontSize: "19px" }}>
-              Categories
-            </Typography>
-            <ul className="categoryBox">
-              {categories.map((category) => (
-                <li
-                  className="category-link"
-                  key={category}
-                  onClick={() => setCategory(category)}
+              <div className="filter">
+                <Typography
+                  sx={{ color: "#A99DFD", p: 2, fontSize: "20px" }}
+                  component="legend"
                 >
-                  {category}
-                </li>
-              ))}
-            </ul>
-
-            <div className="filter">
-              <Typography
-                sx={{ color: "#A99DFD", p: 2, fontSize: "20px" }}
-                component="legend"
-              >
-                Ratings
-              </Typography>
-              <Slider
-                value={ratings}
-                onChange={(e, newRating) => {
-                  setRatings(newRating);
-                }}
-                aria-labelledby="continuous-slider"
-                valueLabelDisplay="auto"
-                min={0}
-                max={5}
-                sx={{
-                  color: "#A99DFD",
-                  "& .MuiSlider-rail": {
-                    backgroundColor: "#A99DFD",
-                  },
-                  "& .MuiSlider-thumb": {
-                    backgroundColor: "#A99DFD",
-                  },
-                }}
-              />
+                  Ratings
+                </Typography>
+                <Slider
+                  value={ratings}
+                  onChange={(e, newRating) => {
+                    setRatings(newRating);
+                  }}
+                  aria-labelledby="continuous-slider"
+                  valueLabelDisplay="auto"
+                  min={0}
+                  max={5}
+                  sx={{
+                    color: "#A99DFD",
+                    "& .MuiSlider-rail": {
+                      backgroundColor: "#A99DFD",
+                    },
+                    "& .MuiSlider-thumb": {
+                      backgroundColor: "#A99DFD",
+                    },
+                  }}
+                />
+              </div>
             </div>
-          </div>
-          <div className="products">
-            {products &&
-              products.map((product) => (
-                <Productcard key={product._id} product={product} />
-              ))}
-          </div>
-
-          {resultPerPage < filteredProductsCount && (
-            <div className="paginationBox">
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resultPerPage}
-                totalItemsCount={productsCount}
-                onChange={setCurrentPageNo}
-                nextPageText="Next"
-                prevPageText="Prev"
-                firstPageText="1st"
-                lastPageText="Last"
-                itemClass="page-item"
-                linkClass="page-link"
-                activeClass="pageItemActive"
-                activeLinkClass="pageLinkActive"
-              />
+            <div className="products">
+              {products &&
+                products.map((product) => (
+                  <Productcard key={product._id} product={product} />
+                ))}
             </div>
-          )}
+
+            {resultPerPage < filteredProductsCount && (
+              <div className="paginationBox">
+                <Pagination
+                  activePage={currentPage}
+                  itemsCountPerPage={resultPerPage}
+                  totalItemsCount={productsCount}
+                  onChange={setCurrentPageNo}
+                  nextPageText="Next"
+                  prevPageText="Prev"
+                  firstPageText="1st"
+                  lastPageText="Last"
+                  itemClass="page-item"
+                  linkClass="page-link"
+                  activeClass="pageItemActive"
+                  activeLinkClass="pageLinkActive"
+                />
+              </div>
+            )}
+          </div>
         </Fragment>
       )}
     </Fragment>

@@ -13,7 +13,7 @@ const Header = () => {
       navColor2="#b3beff"
       navColor3="#9a99f2"
       navColor4="#b3beff"
-      burgerColorHover="#08072d"
+      burgerColorHover="#d2ff85"
       logoWidth="100%"
       logoHoverColor="#6168f8"
       link1Size="1.8rem"

@@ -8,6 +8,8 @@ import Profile from '../../images/Profile.png';
 import { clearErrors, login,register } from '../../actions/userAction';
 import Loader from '../layout/Loader/Loader';
 import { useNavigate } from 'react-router-dom';
+import BackgroundVideo from '../layout/bgVideo/BackgroundVideo';
+import MetaData from '../layout/MetaData';
 
 const Authentication = () => {
     const dispatch = useDispatch();
@@ -16,7 +18,7 @@ const Authentication = () => {
     const { error, loading, isAuthenticated } = useSelector(
       (state) => state.user
     );
-    
+
 
     const [isSignUpActive, setIsSignUpActive] = useState(false);
     const [loginEmail, setLoginEmail] = useState("");
@@ -106,145 +108,148 @@ const Authentication = () => {
         <Loader />
       ) : (
         <Fragment>
-          <div className="auth">
-            <div
-              className={`Authcontainer ${
-                isSignUpActive ? "right-panel-active" : ""
-              }`}
-              id="container"
-            >
-              <div className="form-container sign-up-container">
-                <form
-                  ref={registerTab}
-                  encType="multipart/form-data"
-                  onSubmit={registerSubmit}
-                >
-                  <h1 className="h1">Create Account</h1>
-                  <div className="social-container">
-                    <a href="#" className="social a">
-                      <FaGoogle />
-                    </a>
-                    <a href="#" className="social a">
-                      <FaFacebookF />
-                    </a>
-                    <a href="#" className="social a ">
-                      <FaLinkedinIn />
-                    </a>
-                  </div>
-                  <span className="span">
-                    or use your email for registration
-                  </span>
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    required
-                    name="name"
-                    value={name}
-                    onChange={registerDataChange}
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    name="email"
-                    value={email}
-                    onChange={registerDataChange}
-                  />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                    name="password"
-                    value={password}
-                    onChange={registerDataChange}
-                  />
-                  <div id="registerImage">
-                    <img src={avatarPreview} alt="Avatar Preview" />
+          <MetaData title="DMC" />
+          <BackgroundVideo bgname={"asset1"} topPosition="-10vmax">
+            <div className="auth">
+              <div
+                className={`Authcontainer ${
+                  isSignUpActive ? "right-panel-active" : ""
+                }`}
+                id="container"
+              >
+                <div className="form-container sign-up-container">
+                  <form
+                    ref={registerTab}
+                    encType="multipart/form-data"
+                    onSubmit={registerSubmit}
+                  >
+                    <h1 className="h1">Create Account</h1>
+                    <div className="social-container">
+                      <a href="#" className="social a">
+                        <FaGoogle />
+                      </a>
+                      <a href="#" className="social a">
+                        <FaFacebookF />
+                      </a>
+                      <a href="#" className="social a ">
+                        <FaLinkedinIn />
+                      </a>
+                    </div>
+                    <span className="span">
+                      or use your email for registration
+                    </span>
                     <input
-                      type="file"
-                      name="avatar"
-                      accept="image/*"
+                      type="text"
+                      placeholder="Name"
+                      required
+                      name="name"
+                      value={name}
                       onChange={registerDataChange}
                     />
-                  </div>
-                  <button type="submit" value="Register">
-                    Sign Up
-                  </button>
-                </form>
-              </div>
-              <div className="form-container sign-in-container">
-                <form ref={loginTab} onSubmit={loginSubmit}>
-                  <h1 className="h1">Sign in</h1>
-                  <div className="social-container">
-                    <a href="#" className="social a">
-                      <FaGoogle />
-                    </a>
-                    <a href="#" className="social a">
-                      <FaFacebookF />
-                    </a>
-                    <a href="#" className="social a ">
-                      <FaLinkedinIn />
-                    </a>
-                  </div>
-                  <span className="span">or use your account</span>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    value={loginEmail}
-                    onChange={(e) => setLoginEmail(e.target.value)}
-                  />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                    value={loginPassword}
-                    onChange={(e) => setLoginPassword(e.target.value)}
-                  />
-                  <a href="#" className="a forget">
-                    Forgot your password?
-                  </a>
-                  <a href="#" className="a">
-                    {error}
-                  </a>
-                  <button type="submit" value="Login">
-                    Sign In
-                  </button>
-                </form>
-              </div>
-              <div className="overlay-container">
-                <div className="overlay">
-                  <div className="overlay-panel overlay-left">
-                    <h1 className="h1">Welcome Back!</h1>
-                    <p className="p">
-                      To keep connected with us please login with your personal
-                      info
-                    </p>
-                    <button
-                      onClick={handleSignInClick}
-                      className="ghost"
-                      id="signIn"
-                    >
-                      Sign In
-                    </button>
-                  </div>
-                  <div className="overlay-panel overlay-right">
-                    <h1 className="h1">Hello, Friend!</h1>
-                    <p className="p">
-                      Enter your personal details and start journey with us
-                    </p>
-                    <button
-                      onClick={handleSignUpClick}
-                      className="ghost"
-                      id="signUp"
-                    >
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      name="email"
+                      value={email}
+                      onChange={registerDataChange}
+                    />
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      required
+                      name="password"
+                      value={password}
+                      onChange={registerDataChange}
+                    />
+                    <div id="registerImage">
+                      <img src={avatarPreview} alt="Avatar Preview" />
+                      <input
+                        type="file"
+                        name="avatar"
+                        accept="image/*"
+                        onChange={registerDataChange}
+                      />
+                    </div>
+                    <button type="submit" value="Register">
                       Sign Up
                     </button>
+                  </form>
+                </div>
+                <div className="form-container sign-in-container">
+                  <form ref={loginTab} onSubmit={loginSubmit}>
+                    <h1 className="h1">Sign in</h1>
+                    <div className="social-container">
+                      <a href="#" className="social a">
+                        <FaGoogle />
+                      </a>
+                      <a href="#" className="social a">
+                        <FaFacebookF />
+                      </a>
+                      <a href="#" className="social a ">
+                        <FaLinkedinIn />
+                      </a>
+                    </div>
+                    <span className="span">or use your account</span>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      value={loginEmail}
+                      onChange={(e) => setLoginEmail(e.target.value)}
+                    />
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      required
+                      value={loginPassword}
+                      onChange={(e) => setLoginPassword(e.target.value)}
+                    />
+                    <a href="#" className="a forget">
+                      Forgot your password?
+                    </a>
+                    <a href="#" className="a">
+                      {error}
+                    </a>
+                    <button type="submit" value="Login">
+                      Sign In
+                    </button>
+                  </form>
+                </div>
+                <div className="overlay-container">
+                  <div className="overlay">
+                    <div className="overlay-panel overlay-left">
+                      <h1 className="h1">Welcome Back!</h1>
+                      <p className="p">
+                        To keep connected with us please login with your
+                        personal info
+                      </p>
+                      <button
+                        onClick={handleSignInClick}
+                        className="ghost"
+                        id="signIn"
+                      >
+                        Sign In
+                      </button>
+                    </div>
+                    <div className="overlay-panel overlay-right">
+                      <h1 className="h1">Hello, Friend!</h1>
+                      <p className="p">
+                        Enter your personal details and start journey with us
+                      </p>
+                      <button
+                        onClick={handleSignUpClick}
+                        className="ghost"
+                        id="signUp"
+                      >
+                        Sign Up
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </BackgroundVideo>
         </Fragment>
       )}
     </Fragment>
