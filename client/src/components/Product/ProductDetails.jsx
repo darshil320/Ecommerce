@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, getProductDetails } from "../../actions/productAction";
@@ -9,6 +9,7 @@ import ReviewCard from "./ReviewCard";
 import {useAlert} from "react-alert";
 import Loader from "../layout/Loader/Loader";
 import MetaData from "../layout/MetaData";
+import { addItemsToCart } from "../../actions/cartAction";
 
 function ProductDetails() {
   const alert = useAlert();
@@ -17,7 +18,24 @@ function ProductDetails() {
   const { loading, product, error } = useSelector(
     (state) => state.productDetails
   );
+  const [quantity, setQuantity] = useState(1)
 
+  const increaseQuantity = () => {
+    let qty = quantity + 1;
+    if (qty >= product.stock) return;
+    setQuantity(qty);
+  }
+  const decreaseQuantity = () => {
+    let qty = quantity - 1;
+    if (qty <= 0) return;
+    setQuantity(qty);
+  }
+
+  const addToCartHandler = () => {
+    dispatch(addItemsToCart(id, quantity));
+    alert.success("Item Added to Cart");
+  
+  }
 
   useEffect(() => {
     dispatch(getProductDetails(id));
@@ -28,13 +46,14 @@ function ProductDetails() {
   
   }, [dispatch, id,error,alert]);
 
+
   return (
     <Fragment>
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title={`${product.name} - DMC`}/>
+          <MetaData title={`${product.name} - DMC`} />
           <div className="ProductDetails">
             <div className="carousel">
               <Carousel>
@@ -54,6 +73,7 @@ function ProductDetails() {
               <div className="detailsBlock-1">
                 <h2>{product.name}</h2>
                 <p>Product # {product._id}</p>
+                <p> {product.category}</p>
               </div>
               <div className="detailsBlock-2">
                 <Rating
@@ -68,28 +88,39 @@ function ProductDetails() {
                 </span>
               </div>
               <div className="detailsBlock-3">
-                <h1>{`$${product.price}`}</h1>
+                <h1>MRP : {`$${product.price}.00`}</h1>
+                <p>incl. of taxes</p>
+                <p>(Also includes all applicable duties)</p>
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
-                    <button>-</button>
-                    <input type="number" value="1" />
-                    <button>+</button>
-                    <button className="addtocart">Add to cart</button>
+                    <button onClick={decreaseQuantity}>-</button>
+                    <input
+                      readOnly
+                      type="number"
+                      className="ProductsInput"
+                      value={quantity}
+                    />
+                    <button onClick={increaseQuantity}>+</button>
                   </div>
-                  <p>
-                    Status:{" "}
-                    <b
-                      className={product.stock < 1 ? "redColor" : "greenColor"}
-                    >
-                      {product.stock < 1 ? "OutOfStock" : "InStock"}
-                    </b>
-                  </p>
+                  <button
+                    className="addtocart"
+                    disabled={product.Stock < 1 ? true : false}
+                    onClick={addToCartHandler}
+                  >
+                    Add to Bag
+                  </button>
                 </div>
+                <p>
+                  Status:{" "}
+                  <b className={product.stock < 1 ? "redColor" : "greenColor"}>
+                    {product.stock < 1 ? "OutOfStock" : "InStock"}
+                  </b>
+                </p>
               </div>
               <div className="detailsBlock-4">
                 Description : <p>{product.description}</p>
               </div>
-              <button className="submitReview">Submit Review</button>
+              <button className="submitReview">Write a Review</button>
             </div>
           </div>
           <h3 className="reviewsHeading">REVIEWS</h3>

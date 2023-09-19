@@ -22,13 +22,14 @@
 .profileContainer > div:first-child > h1 {
   font: 500 2.2vmax "Poppins";
   color: aliceblue;
-  transform: translateX(-11vmax) translateY(-4vmax);
+  transform: translateX(-11vmax) translateY(-5vmax);
 }
 
 .profileContainer > div:first-child > img {
   width: 20vmax;
   border-radius: 100%;
   transition: all 0.5s;
+  height: auto;
 }
 
 .profileContainer > div:first-child > img:hover {

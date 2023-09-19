@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   outline: none;
+
 }
 
 .containers {
@@ -14,7 +15,7 @@
 
 .card {
   border-radius: 25px;
-  box-shadow: -10px 0px 9px rgb(227, 232, 255);
+  /* box-shadow: -10px 0px 9px rgb(227, 232, 255); */
   cursor: pointer;
 }
 
@@ -24,20 +25,22 @@
   background: #6168f8;
 /* Old browsers */
 
-background: -moz-linear-gradient(-45deg, #6168f8 8%, #ffffff 83%);
+background: -moz-linear-gradient(-45deg, #6168f8 8%, #b0afb8 83%);
 /* FF3.6-15 */
 
-background: -webkit-linear-gradient(-45deg, #6168f8 8%, #ffffff 83%);
+background: -webkit-linear-gradient(-45deg, #6168f8 8%, #b0afb8 83%);
 /* Chrome10-25,Safari5.1-6 */
 
-background: linear-gradient(135deg, #6168f8 8%, #899cff 83%);
+background: linear-gradient(135deg, #6168f8 8%, #2c2947 83%);
 /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', endColorstr='#c82930', GradientType=1);
 
   border-radius: 25px 25px 0 0;
 }
-
+.back-text{
+  color: rgba(134, 132, 236, 0.648);
+}
 .card-logo {
   width: 30px;
   margin: 20px;
@@ -92,8 +95,10 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
 
 .card-body {
   height: 255px;
-  background: #fff;
+  background: #0f0c0f;
   border-radius: 0 0 25px 25px;
+  border:1px solid #2b262b;
+  color: #b0afb8;
 }
 
 .product-title {
@@ -114,8 +119,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
   position: relative;
   font-size: 10px;
   font-weight: 300;
-  color: #fff;
-  background: #11e95b;
+  color: black;
+  background: #d2ff85;
   padding: 2px 5px;
   border-radius: 4px;
   top: -2px;
@@ -168,12 +173,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
   border-radius: 100%;
   text-align: center;
   line-height: 23px;
-  color: #000;
+  color: whitesmoke;
 }
 
 .ul-size li a.active {
-  background: #f35e3d;
-  color: #fff;
+  background: #d2ff85;
+  color: black;
 }
 
 .product-size:before,
@@ -233,6 +238,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
 }
 
 .product-price {
+  width: 4.5vmax;
   position: absolute;
   background: #6168f8;
   padding: 7px 20px;
@@ -241,9 +247,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
   font-size: 24px;
   font-weight: 200;
   color: #fff;
-  border-radius: 7px;
-  margin-top: -13px;
-  margin-left: -5px;
+  border-radius: 18px;
+  margin-top: -20px;
+  margin-left: -2px;
 }
 
 .product-price b {
@@ -264,4 +270,16 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
 .yt:hover
 {
   background: rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width:600px) {
+  .product-img{
+    height:150px;
+    width: max-content;
+    overflow-x: hidden;
+  }
+  .product-img:hover{
+    scale:1.000001;
+    left: -72px;
+  }
 }

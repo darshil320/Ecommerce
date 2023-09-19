@@ -32,7 +32,7 @@ useEffect(() => {
       {loading ? (
         <Loader />
       ) : (
-        <Fragment>
+        <div className="home">
           <MetaData title="DMC" />
           <BackgroundVideo bgname="sit" topPosition="-9rem">
             <div className="banner" id="hero">
@@ -62,7 +62,7 @@ useEffect(() => {
                 products.map((product) => <Productcard product={product} />)}
             </div>
           </div>
-        </Fragment>
+        </div>
       )}
     </Fragment>
   );

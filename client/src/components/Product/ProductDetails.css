@@ -5,6 +5,9 @@
   box-sizing: border-box;
   display:flex;
 }
+.ProductsInput{
+    background-color: transparent;
+}
 
 .ProductDetails > div {
   width: 100%;
@@ -37,15 +40,14 @@
 .detailsBlock-1 > p {
   color: rgba(0, 0, 0, 0.582);
   font: 200 0.6vmax;
-  margin: 1vmax 0;
+  margin: 0.5vmax 0;
 }
 
 .detailsBlock-2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.205);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+
   width: 70%;
   padding: 1vmax 0;
 }
@@ -57,14 +59,15 @@
 
 .detailsBlock-3 {
   width: 70%;
-  
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
 }
 
 .detailsBlock-3 > h1 {
   color: rgba(17, 17, 17, 0.795);
   font: 400 1.8vmax "Franklin Gothic Medium";
-  margin: 1vmax 0;
+  margin-top: 1vmax;
+}
+.detailsBlock-3 > p{
+  color: rgba(113, 113, 113, 0.729);
 }
 .detailsBlock-3-1 {
   display: flex;
@@ -96,24 +99,16 @@
   display: flex;
 }
 .addtocart {
+  display: block;
   border: none;
   cursor: pointer;
   color: white;
-  transition: all 0.5s;
-  background-color: black!important;
-  font: 500 .8vmax "Lato";
+  font: 500 0.9vmax "Lato";
   border-radius: 20px;
   padding: 0.5vmax 2vmax !important;
   margin: 1vmax;
   outline: none;
-}
 
-.addtocart:hover{
-  background-color: rgba(0, 0, 0, 0.808)!important;
-}
-.detailsBlock-3-1{
-  border-top: 1px solid rgba(0, 0, 0, 0.205);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
 }
 .detailsBlock-3-1 > p {
   padding: 1vmax 0;
@@ -160,7 +155,6 @@
   flex-direction: column;
 }
 .submitDialogTextArea {
-  border: 1px solid rgba(0, 0, 0, 0.082);
   margin: 1vmax 0;
   outline: none;
   padding: 1rem;
@@ -251,7 +245,14 @@
     text-align: center;
     
   }
-
+   .detailsBlock-3-1 > button:last-child {
+    font: 500 1.7vmax "Roboto";
+    padding: 1vmax!important;
+    text-align: center;
+    width: 20vmax;
+    margin: 3vmax 0;
+      text-align: center!important;
+  }
   .detailsBlock-3-1 {
     flex-direction: column;
   }
@@ -261,7 +262,7 @@
     padding: 2vmax 0;
   }
   .detailsBlock-3-1-1 > button {
-    padding: 1.2vmax;
+    padding: 1.5vmax;
     width: 4vmax;
   }
 
@@ -275,8 +276,9 @@
     flex-direction: column;
     font: 500 1.7vmax "Lato";
     padding: 1.5vmax;
-    width: 20vmax;
-    margin: 3vmax 0;
+    width: 30vmax;
+    margin: 3vmax auto;
+    text-align: center !important;
   }
 
   .detailsBlock-3 > p {
@@ -294,8 +296,8 @@
   }
 
   .submitReview {
-    font: 500 1.7vmax "Lato";
-    padding: 1.5vmax;
+    font: 500 2vmax "Lato"!important;
+    padding: 1.8vmax!important;
     width: 20vmax;
     margin: 3vmax 0;
   }

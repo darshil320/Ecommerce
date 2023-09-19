@@ -7,7 +7,7 @@ import { useRef } from 'react';
 import Profile from '../../images/Profile.png';
 import { clearErrors, login,register } from '../../actions/userAction';
 import Loader from '../layout/Loader/Loader';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BackgroundVideo from '../layout/bgVideo/BackgroundVideo';
 import MetaData from '../layout/MetaData';
 
@@ -91,7 +91,7 @@ const Authentication = () => {
             setLoginPassword("");
         }
         
-      }, [error, alert, isAuthenticated, navigate]);
+      }, [error,dispatch, alert, isAuthenticated, navigate]);
 
 
     const handleSignUpClick = () => {
@@ -205,9 +205,9 @@ const Authentication = () => {
                       value={loginPassword}
                       onChange={(e) => setLoginPassword(e.target.value)}
                     />
-                    <a href="#" className="a forget">
+                    <Link to="/password/forgot" className="a forget">
                       Forgot your password?
-                    </a>
+                    </Link>
                     <a href="#" className="a">
                       {error}
                     </a>

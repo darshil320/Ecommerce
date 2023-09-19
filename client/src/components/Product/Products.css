@@ -3,11 +3,15 @@
   width: 15vw;
   border-bottom: 1px solid rgba(0, 0, 0, 0.171);
   padding: 2vmax;
-  color: rgba(0, 0, 0, 0.678);
-  font: 500 1.5vmax "Roboto";
+color: #b0afb8;
+
+  font: 500 2vmax "Roboto";
   text-align: center;
 }
+.allproducts{
+  background: linear-gradient(to bottom, black,#0e0a0f);
 
+}
 .products {
   display: flex;
   position: relative;
@@ -21,7 +25,7 @@
 .paginationBox {
   display: flex;
   justify-content: center;
-  margin: 6vmax;
+  padding: 5vmax;
 }
 
 .pagination {
@@ -31,9 +35,9 @@
 }
 
 .page-item {
-  background-color: rgb(255, 255, 255);
+  background-color: #0f0c0f;
   list-style: none;
-  border: 1px solid rgba(0, 0, 0, 0.178);
+  border: 1px solid #b0afb8;
   padding: 1vmax 1.5vmax;
   transition: all 0.3s;
   cursor: pointer;
@@ -48,7 +52,7 @@
 .page-link {
   text-decoration: none;
   font: 300 0.7vmax "Roboto";
-  color: rgb(80, 80, 80);
+  color: rgb(216, 210, 221);
   transition: all 0.3s;
 }
 
@@ -84,7 +88,6 @@
 }
 .filter{
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin: 0 1rem;
@@ -97,31 +100,54 @@
 .category-link {
   padding: 0 1rem;
   list-style: none;
-  color: rgba(0, 0, 0, 0.61);
+color: #b0afb8;
   font: 400 0.8vmax "Roboto";
   cursor: pointer;
 }
 .category-link:hover {
-  color: #78DEB9;
+  color: #d2ff85;
 }
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .filterBox {
-     width:fit-content;
-  display: flex;
-  flex-direction: column;
-  position: static;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
     margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
+  }
+  .filter{
+     display: flex;
+    flex-direction: column;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   .page-link {
     font: 300 1.7vmax "Roboto";
   }
   .category-link {
-    font: 400 1.8vmax "Roboto";
+    font: 400 1.6vmax "Roboto";
+    padding:0.5rem;
+
+    
+  }
+  .categoryBox{
+     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 
@@ -133,7 +159,8 @@
   position: relative;
   font-size: 3em !important;
   color: white;  /* Fallback color */
-  
+   font-weight: 700!important;
+    font-family: "Roboto";
   /* Background for the regular state */
   background: linear-gradient(90deg, white, #78DEB9);
   background-clip:content-box;
@@ -172,9 +199,9 @@
   position: relative;
   font-size: 6.5rem;
   color: white;  /* Fallback color */
-   margin: 5vmax!important;
-   font-weight: 700;
-  /* Background for the regular state */
+  margin: 5vmax!important;
+  font-weight: 700!important;
+  font-family: "Roboto";
   background: linear-gradient(90deg, rgb(255, 255, 255), #6168f8);
   background-clip:content-box;
   -webkit-background-clip: text;
@@ -190,7 +217,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-
+  font-weight: 700!important;
   /* Background for the hover state */
   background: -webkit-linear-gradient(90deg, #78DEB9, white);
   opacity: 0;

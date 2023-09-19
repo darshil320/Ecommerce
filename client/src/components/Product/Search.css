@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(236, 233, 255);
+  background-color:#08072d;
   position: fixed;
   top: 0%;
   left: 0;
@@ -18,8 +18,8 @@
   color: rgba(0, 0, 0, 0.637);
   padding: 1vmax 2vmax;
   width: 50%;
+  border-radius: 50px;
   outline: none;
-  border-radius: 0%;
   font: 300 1.1vmax Lato;
   box-sizing: border-box;
   height: 8%;
@@ -32,6 +32,7 @@
   background-color: rgb(125, 142, 255);
   border: none;
   padding: 1vmax;
+  border-radius: 50px;
   width: 10%;
   font: 300 1.1vmax "Lato";
   cursor: pointer;

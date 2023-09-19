@@ -1,7 +1,7 @@
 import React from 'react'
 import playStore from "../../../images/playstore.png";
 import appStore from "../../../images/Appstore.png";
-import two from '../../../images/two.svg'
+import twoblack from '../../../images/twoblack.svg'
 import './Footer.css'
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 const Footer = () => {
@@ -11,18 +11,14 @@ const Footer = () => {
         <div className="container">
           <div className="left-top">
             <a href="#hero">
-            <button >
-              <h1>↑</h1>
-            </button>
+              <button>
+                <h1>↑</h1>
+              </button>
             </a>
           </div>
           <div className="left-text">
             <div className="socials">
-
-            <a href="/products">
-              {" "}
-              Instagram | Dribbble | Linked In
-            </a>
+              <a href="/products"> Instagram | Dribbble | Linked In</a>
             </div>
 
             <h5>
@@ -37,7 +33,7 @@ const Footer = () => {
         <img src={appStore} alt="Appstore" />
       </div>
       <div className="midFooter">
-        <img src={two} />
+        <img src={twoblack} />
         <p>High Quality is our first priority</p>
 
         <p>Copyrights 2023 &copy; Darshil lashkari</p>

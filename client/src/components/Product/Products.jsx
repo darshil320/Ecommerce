@@ -73,7 +73,7 @@ const Products = () => {
       {loading ? (
         <Loader />
       ) : (
-        <Fragment>
+        <div className='allproducts'>
           <MetaData title="Products - DMC" />
           <BackgroundVideo bgname="sitt" topPosition="0">
             <div className="banner">
@@ -184,7 +184,7 @@ const Products = () => {
               </div>
             )}
           </div>
-        </Fragment>
+        </div>
       )}
     </Fragment>
   );
