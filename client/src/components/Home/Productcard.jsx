@@ -15,36 +15,36 @@ const options = {
   };
 
   return (
-    <Link class="containers" to={`/product/${product._id}`}>
-      <div class="card">
-        <div class="card-head">
-          <img src={nike} alt="logo" class="card-logo" />
+    <Link className="containers" to={`/product/${product._id}`}>
+      <div className="card">
+        <div className="card-head">
+          <img src={nike} alt="logo" className="card-logo" />
           <img
             src={product.images[0].url}
             className="product-img"
             alt={product.name}
           />
-          <div class="product-detail">
+          <div className="product-detail">
             <h2>{product.name}</h2> {product.description}
           </div>
-          <span class="back-text">FAS</span>
+          <span className="back-text">FAS</span>
         </div>
-        <div class="card-body">
-          <div class="product-desc">
-            <span class="product-title">
+        <div className="card-body">
+          <div className="product-desc">
+            <span className="product-title">
               {product.name}
-              <span class="badge">New</span>
+              <span className="badge">New</span>
             </span>
-            <span class="product-caption">{product.category}</span>
+            <span className="product-caption">{product.category}</span>
             <div className="product-rating">
               <ReactStars {...options} />
               <span>({product.numofReviews})</span>
             </div>
           </div>
-          <div class="product-properties">
-            <span class="product-size">
+          <div className="product-properties">
+            <span className="product-size">
               <h4>Size</h4>
-              <ul class="ul-size">
+              <ul className="ul-size">
                 <li>
                   <a href="#">7</a>
                 </li>
@@ -55,7 +55,7 @@ const options = {
                   <a href="#">9</a>
                 </li>
                 <li>
-                  <a href="#" class="active">
+                  <a href="#" className="active">
                     10
                   </a>
                 </li>
@@ -64,21 +64,21 @@ const options = {
                 </li>
               </ul>
             </span>
-            <span class="product-color">
+            <span className="product-color">
               <h4>Colour</h4>
-              <ul class="ul-color">
+              <ul className="ul-color">
                 <li>
-                  <a href="#" class="orange active"></a>
+                  <a href="#" className="orange active"></a>
                 </li>
                 <li>
-                  <a href="#" class="green"></a>
+                  <a href="#" className="green"></a>
                 </li>
                 <li>
-                  <a href="#" class="yellow"></a>
+                  <a href="#" className="yellow"></a>
                 </li>
               </ul>
             </span>
-            <span class="product-price">
+            <span className="product-price">
               <b>{`${product.price}$`}</b>
             </span>
           </div>

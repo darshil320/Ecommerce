@@ -17,8 +17,10 @@ import store from "./store";
 import UpdateProfile from './components/User/UpdateProfile'
 import UpdatePassword from "./components/User/UpdatePassword";
 import ForgotPassword from "./components/User/ForgotPassword";
-import ResetPassword from "./components/User/ResetPassword.jsx";
+import ResetPassword from "./components/User/ResetPassword";
 import Cart from './components/Cart/Cart';
+import Shipping from "./components/Cart/Shipping";
+import ConfirmOrder from './components/Cart/ConfirmOrder';
 
 
 
@@ -72,6 +74,20 @@ function App() {
           element={
             !loading &&
             (isAuthenticated ? <Navigate to="/account" /> : <Authentication />)
+          }
+        />
+        <Route
+          path="/shipping"
+          element={
+            !loading &&
+            (isAuthenticated ? <Shipping /> : <Navigate to="/account" />)
+          }
+        />
+        <Route
+          path="/order/confirm"
+          element={
+            !loading &&
+            (isAuthenticated ? <ConfirmOrder /> : <Navigate to="/account" />)
           }
         />
         <Route path="/password/reset/:token" element={<ResetPassword />} />

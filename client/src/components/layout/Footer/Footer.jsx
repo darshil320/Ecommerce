@@ -43,32 +43,32 @@ const Footer = () => {
           <div className="list-group">
             <ul className="list">
               <li>
-                <a href="">Approach</a>
+                <a href="">Contact Us</a>
               </li>
               <li>
-                <a href="">Features</a>
+                <a href="">FAQ</a>
               </li>
               <li>
-                <a href="">Work</a>
+                <a href="">Blogs</a>
               </li>
               <li>
-                <a href="">Pricing</a>
+                <a href="">Privacy Policy</a>
               </li>
             </ul>
           </div>
           <div className="list-group">
             <ul className="list">
               <li>
-                <a href="">Admin Login</a>
+                <a href="">Features</a>
               </li>
               <li>
-                <a href="">Contact</a>
+                <a href="">Exchange Policy</a>
               </li>
               <li>
                 <a href="">Terms & Conditions</a>
               </li>
               <li>
-                <a href="">Privacy Policy</a>
+                <a href="">Place Return</a>
               </li>
             </ul>
           </div>

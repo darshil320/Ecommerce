@@ -238,7 +238,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
 }
 
 .product-price {
-  width: 4.5vmax;
+  min-width: 4.5vmax;
   position: absolute;
   background: #6168f8;
   padding: 7px 20px;
@@ -281,5 +281,9 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6168f8', en
   .product-img:hover{
     scale:1.000001;
     left: -72px;
+  }
+  .product-price {
+    font-size: 1.2rem;
+    min-width: 4.5rem;
   }
 }

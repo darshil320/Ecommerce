@@ -18,7 +18,6 @@ const categories = [
   "shoes",
   "Bottom",
   "Tops",
-  "Montitor",
   "Camera",
   "SmartPhones",
 ];
@@ -73,19 +72,21 @@ const Products = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className='allproducts'>
+        <div className="allproducts">
           <MetaData title="Products - DMC" />
-          <BackgroundVideo bgname="sitt" topPosition="0">
-            <div className="banner">
-              <p className="products-text">welcome to TheHouseOfDMC.</p>
-              <h1 className="products-text2">Find amazing products below</h1>
-              <a href="#products" className="scroll">
-                <button className="scroll-btn">
-                  scroll <FaArrowDownLong />
-                </button>
-              </a>
-            </div>
-          </BackgroundVideo>
+          <div className="heroproducts">
+            <BackgroundVideo bgname="sitt" topPosition="0">
+              <div className="banner">
+                <p className="products-text">welcome to TheHouseOfDMC.</p>
+                <h1 className="products-text2">Find amazing products below</h1>
+                <a href="#products" className="scroll">
+                  <button className="scroll-btn">
+                    scroll <FaArrowDownLong />
+                  </button>
+                </a>
+              </div>
+            </BackgroundVideo>
+          </div>
           <div className="ProductsPage" ref={productsSectionRef}>
             <h2 className="productsHeading" id="products">
               Products

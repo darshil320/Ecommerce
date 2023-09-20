@@ -7,11 +7,11 @@ import { useRef } from 'react';
 import Profile from '../../images/Profile.png';
 import { clearErrors, login,register } from '../../actions/userAction';
 import Loader from '../layout/Loader/Loader';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import BackgroundVideo from '../layout/bgVideo/BackgroundVideo';
 import MetaData from '../layout/MetaData';
 
-const Authentication = () => {
+const Authentication = (location) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const alert = useAlert();
@@ -77,6 +77,8 @@ const Authentication = () => {
       }
       };
   
+  const redirect = location.search ? location.search.split("=")[1] : "/shipping";
+      console.log(redirect)
 
       useEffect(() => {    
         if (error) {
@@ -84,14 +86,14 @@ const Authentication = () => {
           dispatch(clearErrors());
         }
         if (isAuthenticated) {
-            navigate("/account");
+            navigate(redirect);
         }
         if (error === "Invalid Credentials") {
             setLoginEmail("");
             setLoginPassword("");
         }
         
-      }, [error,dispatch, alert, isAuthenticated, navigate]);
+      }, [error,dispatch, alert, isAuthenticated, navigate, redirect]);
 
 
     const handleSignUpClick = () => {

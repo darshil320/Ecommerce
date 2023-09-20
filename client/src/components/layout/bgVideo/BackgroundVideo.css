@@ -25,3 +25,16 @@
   height: 100%;
   z-index: 1;
 }
+
+@media screen and (max-width:600px) {
+  .video-background-media{
+    margin: 0;
+    padding: 0;
+    height:100vh;
+    top: 0!important;
+    left:-30rem;
+  }
+  .video-background{
+    height: 100vh;
+  }
+}

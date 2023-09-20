@@ -1,11 +1,11 @@
 footer {
-  padding:3rem 0rem;
   background-color:#ffffff;
   color: #2b2d42;
   display: flex;
   align-items: center;
   background: linear-gradient(to bottom, #0e0a0f,#0e0a0f);
   height: max-content;
+  padding-top: 3rem;
 }
 
 .leftFooter {
@@ -140,7 +140,6 @@ color: #b0afb8;
   justify-content: space-around;
   width:100%;
   align-items: center;
-  margin-bottom: 3rem!important;
 }
 .list-group{
   width: max-content;
@@ -197,6 +196,7 @@ color: #b0afb8;
   height: 42vmax;
   width: 100%;
   margin:0;
+
 }
 .rightFooter{
   width: 50%;
@@ -210,6 +210,9 @@ color: #b0afb8;
 }
   .list-group {
     flex: initial; 
+      width:100%;
   }
-
+footer{
+  padding-top: 6rem;
+}
 }

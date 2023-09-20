@@ -116,6 +116,11 @@
   font: 400 1vmax "Lato";
   margin: 1vmax 0;
 }
+.detailsBlock-3-1 > button {
+  background-color: black;
+  font: 400 0.8vmax "Lato";
+
+}
 .redColor{
   color: red;
 }

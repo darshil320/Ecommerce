@@ -3,10 +3,12 @@ import "./Cart.css"
 import CartItemCard from "./CartItemCard.jsx"   
 import { useSelector, useDispatch } from "react-redux"
 import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
+import { useNavigate } from 'react-router-dom';
 
 
 const Cart = () => {
       const dispatch = useDispatch();
+      const navigate = useNavigate();
       const {cartItems} = useSelector((state)=> state.cart);
           const increaseQuantity = (id, quantity, stock) => {
             const newQty = quantity + 1;
@@ -15,7 +17,7 @@ const Cart = () => {
             }
             dispatch(addItemsToCart(id, newQty));
           };
-
+          
           const decreaseQuantity = (id, quantity) => {
             const newQty = quantity - 1;
             if (quantity <= 1) {
@@ -25,6 +27,10 @@ const Cart = () => {
           };
           const deleteCartItems = (id) => {
             dispatch(removeItemsFromCart(id));
+          }
+
+          const checkoutHandler = () =>{
+            navigate("/login?redirect=shipping")
           }
 
   return (
@@ -68,7 +74,7 @@ const Cart = () => {
           </div>
           <div></div>
           <div className="checkOutBtn">
-            <button>Check Out</button>
+            <button onClick={checkoutHandler}>Check Out</button>
           </div>
         </div>
       </div>

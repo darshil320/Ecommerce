@@ -47,7 +47,6 @@
 .home{
   background: linear-gradient(to bottom, #0e0a0f,#0e0a0f);
       scroll-behavior: smooth;
-      padding:1rem 0;
 }
 .homeHeading {
   text-align: center;
@@ -77,10 +76,28 @@
 }
 
 @media screen and (max-width: 600px) {
+  .banner{
+    height: 100vh;
+  }
+  .banner > h1{
+    position: relative;
+    text-wrap:wrap;
+  }
+  .banner > p{
+    text-wrap: wrap;
+    padding-left: 3rem;
+    margin: 0;
+  }
+  .container{
+    width: 100%;
+  }
   .productCard > p {
     font-size: 1.7vmax;
   }
-
+  .homeHeading{
+    font-size: 1.8rem;
+    padding-bottom: 1.5rem;
+  }
   .productCard > div {
     margin: 0vmax;
     display: block;
@@ -95,11 +112,14 @@
     font: 300 1vmax "Roboto";
   }
   .gradient-text{
-    font-size: 1.5rem !important;
+    font-size: 2.5rem !important;
+    text-align: start;
+    width: 100vw;
+    height: 20vh;
   }
 .gradient-text2{
-    font-size: 3rem!important;
-    margin: 0.5vmax;
+    font-size: 1rem!important;
+    display: block;
   }
   .banner{
     display: flex;
@@ -115,10 +135,8 @@
   font-size: 7em;
   color: white;
   text-align: left;  
-  white-space: nowrap;
   margin-left: 0;        
   padding-left: 0;
-  
   /* Background for the regular state */
   background: linear-gradient(90deg, white, #78DEB9);
   background-clip:content-box;

@@ -37,13 +37,13 @@ useEffect(() => {
           <BackgroundVideo bgname="sit" topPosition="-9rem">
             <div className="banner" id="hero">
               <p className="gradient-text">
-                Discover luxury redefined
+                Discover luxury redefined at
                 <br />
                 TheHouseOfDMC.
               </p>
               <h1 className="gradient-text2">
                 "Experience global Finesse Where global elegance Meets
-                <br />
+                  <br />
                 timeless luxury, Crafted with distinction for every moment"
               </h1>
               <a href="#container" className="scroll">

@@ -74,7 +74,6 @@ color: #b0afb8;
 
 .ProductsPage{
   position: relative;
-
 }
 .filterBox {
   display: flex;
@@ -148,6 +147,13 @@ color: #b0afb8;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+  }
+  .productsHeading{
+    margin-top: 0;
+    border-bottom: 1px solid rgb(165, 165, 165);
+  }
+  .heroproducts{
+    display: none;
   }
 }
 
