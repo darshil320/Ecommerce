@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 .shipping{
-    padding-top: 2rem;
+    padding-top: 6rem;
 }
 
 .shippingBox {
@@ -20,11 +20,9 @@
 
 .shippingHeading {
   text-align: center;
-  color: rgba(0, 0, 0, 0.664);
-  font: 400 1.3vmax "Lato";
-  padding: 1.3vmax;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
-  width: 50%;
+  color: rgb(32, 31, 31);
+  font: 400 2vmax "Roboto";
+  padding-top: 3vmax;
   margin: auto;
 }
 
@@ -46,36 +44,41 @@
 }
 
 .shippingForm > div > input,
-.shippingForm > div > select {
+.shippingForm > div > select{
   padding: 1vmax 4vmax;
   padding-right: 1vmax;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
-  font: 300 0.9vmax ;
+  font: 400 0.8vmax "Poppins" ;
   outline: none;
+  border-radius: 6px;
+  margin: 0.5vmax;
 }
 
+.shippingForm > div > select{
+  
+}
 .shippingForm > div > svg {
   position: absolute;
   transform: translateX(1vmax);
-  font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  font-size: 1.4vmax;
+  color: rgba(109, 103, 232, 0.649);
 }
 
 .shippingBtn {
-  border: none;
-  background-color: #A99DFD;
+  background-color:black;
   color: white;
-  font: 300 1vmax "Lato";
   width: 100%;
   padding: 1vmax;
+  border: none;
+  margin: auto;
   cursor: pointer;
-  transition: all 0.5s;
-  outline: none;
-  margin: 2vmax;
-  border-radius: 20px;
+  transition: 0.5s;
+  margin-top: 2vmax;
+  font: 400 1vmax "Roboto";
+  border-radius: 40px!important; 
 }
 
 .shippingBtn:hover {
@@ -89,8 +92,8 @@
   }
 
   .shippingHeading {
-    font: 400 6vw "Lato";
-    padding: 5vw;
+    font: 500 3vmax "Roboto";
+    padding-top: 8vw;
   }
 
   .shippingForm {
@@ -112,4 +115,9 @@
     font: 300 4vw "Lato";
     padding: 4vw;
   }
+  .shippingForm > div > input,
+.shippingForm > div > select{
+  font-size: 1rem;
+  padding: 0.8rem 3rem;
+}
 }

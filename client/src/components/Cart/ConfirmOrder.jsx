@@ -40,7 +40,7 @@ const ConfirmOrder =  () => {
   };
 
   return (
-    <Fragment>
+    <div className="confirm-order">
       <MetaData title="Confirm Order" />
       <CheckoutSteps activeStep={1} />
       <div className="confirmOrderPage">
@@ -63,7 +63,7 @@ const ConfirmOrder =  () => {
             </div>
           </div>
           <div className="confirmCartItems">
-            <Typography>Your Cart Items:</Typography>
+            <Typography>Bag</Typography>
             <div className="confirmCartItemsContainer">
               {cartItems &&
                 cartItems.map((item) => (
@@ -73,7 +73,7 @@ const ConfirmOrder =  () => {
                       {item.name}
                     </Link>{" "}
                     <span>
-                      {item.quantity} X ₹{item.price} ={" "}
+                      {item.quantity} X{item.price} ={" "}
                       <b>₹{item.price * item.quantity}</b>
                     </span>
                   </div>
@@ -84,34 +84,34 @@ const ConfirmOrder =  () => {
         {/*  */}
         <div>
           <div className="orderSummary">
-            <Typography>Order Summery</Typography>
+            <Typography>Order Summary</Typography>
             <div>
               <div>
-                <p>Subtotal:</p>
-                <span>₹{subtotal}</span>
+                <p>Subtotal</p>
+                <span>₹ {subtotal}.00</span>
               </div>
               <div>
-                <p>Shipping Charges:</p>
-                <span>₹{shippingCharges}</span>
+                <p>Estimated Delivery & Handling</p>
+                <span>₹ {shippingCharges}.00</span>
               </div>
               <div>
-                <p>GST:</p>
-                <span>₹{tax}</span>
+                <p>GST</p>
+                <span>₹ {tax}.00</span>
               </div>
             </div>
 
             <div className="orderSummaryTotal">
-              <p>
-                <b>Total:</b>
-              </p>
-              <span>₹{totalPrice}</span>
+              <p>Total</p>
+              <span>₹ {totalPrice}.00</span>
             </div>
 
-            <button onClick={proceedToPayment}>Proceed To Payment</button>
+            <button onClick={proceedToPayment} className="hover-target">
+              Checkout
+            </button>
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

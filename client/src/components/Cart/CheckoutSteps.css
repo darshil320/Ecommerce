@@ -9,5 +9,5 @@
 
 .MuiStepConnector-active,
 .MuiStepConnector-completed {
-  background-color:rgb(107, 84, 255) ;
+  background-color:rgb(107, 84, 255)!important ;
 }

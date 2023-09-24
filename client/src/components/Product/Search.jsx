@@ -2,7 +2,7 @@
     import MetaData from "../layout/MetaData";
     import "./Search.css";
 import { useNavigate } from "react-router-dom";
-
+import SearchIcon from "@mui/icons-material/Search";
 
     const Search = () => {
     const [keyword, setKeyword] = useState("");
@@ -19,13 +19,15 @@ import { useNavigate } from "react-router-dom";
     return (
         <Fragment>
         <MetaData title="Search A Product -- ECOMMERCE" />
-        <form className="searchBox" onSubmit={searchSubmitHandler}>
+        <form className="searchBox " onSubmit={searchSubmitHandler}>
             <input
             type="text"
             placeholder="Search a Product ..."
             onChange={(e) => setKeyword(e.target.value)}
             />
+
             <input type="submit" value="Search" />
+
         </form>
         </Fragment>
     );

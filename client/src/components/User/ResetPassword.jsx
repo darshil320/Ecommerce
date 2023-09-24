@@ -63,7 +63,7 @@ const ResetPassword = ({}) => {
           <MetaData title="Reset Password" />
           <div className="resetPasswordContainer">
             <div className="resetPasswordBox">
-              <h2 className="resetPasswordHeading">Update Profile</h2>
+              <h2 className="resetPasswordHeading">Reset Password</h2>
 
               <form
                 className="resetPasswordForm"

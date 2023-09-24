@@ -16,17 +16,20 @@
 }
 
 .CartItemCard > div > a {
-  font: 300 0.9vmax ;
+  width: fit-content;
+  font: 300 1vmax "Poppins" ;
   color: rgba(24, 24, 24, 0.815);
   text-decoration: none;
 }
 
 .CartItemCard > div > span {
+  width: fit-content;
   font: 300 0.9vmax "Poppins";
   color: rgba(24, 24, 24, 0.815);
 }
 
 .CartItemCard > div > p {
+  width: fit-content;
   color: tomato;
   font: 100 0.8vmax "Poppins";
   cursor: pointer;
@@ -48,26 +51,31 @@
 }
 @media screen and (max-width: 600px) {
   .CartItemCard {
-    padding: 3vmax;
-    height: 25vmax;
+    padding: 2vmax;
+    height: 15vmax;
   }
   .CartItemCard > img {
     width: 10vmax;
   }
 
   .CartItemCard > div {
-    margin: 1vmax 2vmax;
+    margin: 1vmax 1vmax;
   }
 
   .CartItemCard > div > a {
-    font: 300 2vmax ;
+    font: 300 1.6vmax "Lato";
+    width:100%;
   }
 
   .CartItemCard > div > span {
-    font: 300 1.9vmax "Lato";
+    font: 300 1.5vmax "Lato";
+
   }
 
   .CartItemCard > div > p {
     font: 100 1.8vmax "Lato";
+  }
+  .cartIcons > p > svg{
+    size: 50px;
   }
 }

@@ -12,7 +12,8 @@
 }
 
 .updateProfileBox {
-	background: linear-gradient(to right, #A99DFD, #414eff);
+  background: #0f0c0f;
+  border:1px solid #2b262b;
   width: 25vw;
   height: 70vh;
   box-sizing: border-box;
@@ -22,17 +23,14 @@
 
 .updateProfileHeading {
   text-align: center;
-  font: 500 1.5vmax "Poppins";
+  font: 500 1.7vmax "Poppins";
   padding: 1.3vmax;
-  border-bottom: 1px solid rgb(255, 255, 255);
   width: 50%;
   margin: auto;
-  color: aliceblue;
+  color:#d2ff85;
 }
 
 .updateProfileForm {
-	background: linear-gradient(to right, #A99DFD, #414eff);
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +39,7 @@
   justify-content: space-evenly;
   height: 70%;
   transition: all 0.5s;
+   background: #0f0c0f;
 }
 
 .updateProfileForm > div {
@@ -55,16 +54,17 @@
   width: 100%;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
-  border-radius: 50px;
+  border-radius:7px;
   font: 300 0.9vmax ;
   outline: none;
+  background-color: white;
 }
 
 .updateProfileForm > div > svg {
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+color: rgba(32, 32, 32, 0.918);
 }
 
 #updateProfileImage > img {
@@ -74,7 +74,8 @@
 }
 #updateProfileImage > input {
   display: flex;
-  padding: 0%;
+  padding: 1%;
+    border-radius:50px;
 }
 
 #updateProfileImage > input::file-selector-button {

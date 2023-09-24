@@ -37,36 +37,45 @@ const ForgotPassword = () => {
       {loading ? (
         <Loader />
       ) : (
-        <Fragment>
+        <div className="Forgotpasswordbg">
           <MetaData title="Forgot Password" />
-          <div className="forgotPasswordContainer">
-            <div className="forgotPasswordBox">
-              <h2 className="forgotPasswordHeading">Forgot Password</h2>
-
-              <form
-                className="forgotPasswordForm"
-                onSubmit={forgotPasswordSubmit}
-              >
-                <div className="forgotPasswordEmail">
-                  <MailOutlineIcon />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+          <div className="glassmorphismBackground">
+            <div className="glassmorphismContainer">
+              <div className="forgotPasswordContainer">
+                <div className="forgotPasswordBox">
+                  <h2 className="forgotPasswordHeading">
+                    Forgot your password?
+                  </h2>
+                  <p className="forgotPasswordparam">
+                    If you forgot your password, please enter your email below<br/>
+                    and we will send you a recovery link.
+                  </p>
+                  <form
+                    className="forgotPasswordForm"
+                    onSubmit={forgotPasswordSubmit}
+                  >
+                    <div className="forgotPasswordEmail">
+                      <MailOutlineIcon />
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        required
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <input
+                      type="submit"
+                      value="Send recovery link"
+                      className="forgotPasswordBtn"
+                    />
+                  </form>
                 </div>
-                <input
-                  type="submit"
-                  value="Send"
-                  className="forgotPasswordBtn"
-                />
-              </form>
+              </div>
             </div>
           </div>
-        </Fragment>
+        </div>
       )}
     </Fragment>
   );

@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "./Header.css";
-import { SpeedDial, SpeedDialAction } from "@mui/lab";
+import { SpeedDial, SpeedDialAction } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonIcon from "@mui/icons-material/Person";
@@ -26,7 +26,7 @@ const UserOptions = ({ user }) => {
     {
       icon: (
         <ShoppingCartIcon
-          style={{ color: cartItems.length > 0 ? "black" : "unset" }}
+          style={{ color: cartItems.length > 0 ? "#806dff" : "unset" }}
         />
       ),
       name: `Cart(${cartItems.length})`,

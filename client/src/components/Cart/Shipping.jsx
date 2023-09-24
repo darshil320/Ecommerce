@@ -143,7 +143,7 @@ const Shipping = () => {
             <input
               type="submit"
               value="Continue"
-              className="shippingBtn"
+              className="shippingBtn hover-target"
               disabled={state ? false : true}
             />
           </form>

@@ -5,25 +5,25 @@ import './ReviewCard.css'
 
 const ReviewRRcard = ({review}) => {
   return (
-      <div class="Rcard">
-        <div class="Rcard-top">
-          <div class="name">
-            <img src={profile} class="img" alt="" />
+      <div className="Rcard">
+        <div className="Rcard-top">
+          <div className="name">
+            <img src={profile} className="img" alt="" />
             <p>{review.name}</p>
           </div>
-          <div class="rate">
+          <div className="rate">
             <Rating value={review.rating} readOnly size="small" precision={0.5} />
           </div>
         </div>
 
-        <div class="Rcard-content">
+        <div className="Rcard-content">
           <p>{review.comment}</p>
         </div>
 
-        <div class="Rcard-action">
+        <div className="Rcard-action">
           <span>13 Feb, 2021</span>
-          <button class="btn">
-            <i class="fas fa-external-link-alt"></i>
+          <button className="btn">
+            <i className="fas fa-external-link-alt"></i>
             Share
           </button>
         </div>

@@ -2,6 +2,33 @@
   margin: 0;
 }
 
+:root {
+  --primary-color: #b0a3ff;
+  --secondary-color: #d2ff85;
+  /* Define more colors as needed */
+}
+
+#cursor {
+  width: 20px;
+  height: 20px;
+  background-color: #b0a3ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform; /* for better performance */
+  z-index: 10000;
+}
+
+.hover-target {
+  margin: 0;
+}
+
+.hover-target:hover {
+  transition: all 0.2s;
+}
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

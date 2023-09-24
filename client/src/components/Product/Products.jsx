@@ -74,7 +74,7 @@ const Products = () => {
       ) : (
         <div className="allproducts">
           <MetaData title="Products - DMC" />
-          <div className="heroproducts">
+          <div className="heroproducts" id="hero">
             <BackgroundVideo bgname="sitt" topPosition="0">
               <div className="banner">
                 <p className="products-text">welcome to TheHouseOfDMC.</p>

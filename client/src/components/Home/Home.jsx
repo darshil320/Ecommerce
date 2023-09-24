@@ -47,7 +47,7 @@ useEffect(() => {
                 timeless luxury, Crafted with distinction for every moment"
               </h1>
               <a href="#container" className="scroll">
-                <button className="scroll-btn">
+                <button className="scroll-btn hover-target">
                   scroll <FaArrowDownLong />
                 </button>
               </a>
